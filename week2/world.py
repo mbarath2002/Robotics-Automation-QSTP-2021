@@ -5,7 +5,7 @@ rospy.init_node('receiver')
 pub=rospy.Publisher('world',String)
 rate=rospy.Rate(2)
 
-c="World"
+c="World!"
 
 while not rospy.is_shutdown()
   pub.publish(c)
