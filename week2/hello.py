@@ -1,7 +1,7 @@
 #!/usr/bin/env python2.7
 import rospy
 from std_msgs.msg import String
-rospy.init_node('hello')
+rospy.init_node('sender')
 pub=rospy.Publisher('hello',String)
 rate=rospy.Rate(2)
 
