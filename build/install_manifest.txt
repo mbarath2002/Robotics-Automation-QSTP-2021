@@ -1,0 +1,13 @@
+/home/student/Robotics-Automation-QSTP-2021/install/_setup_util.py
+/home/student/Robotics-Automation-QSTP-2021/install/env.sh
+/home/student/Robotics-Automation-QSTP-2021/install/setup.bash
+/home/student/Robotics-Automation-QSTP-2021/install/local_setup.bash
+/home/student/Robotics-Automation-QSTP-2021/install/setup.sh
+/home/student/Robotics-Automation-QSTP-2021/install/local_setup.sh
+/home/student/Robotics-Automation-QSTP-2021/install/setup.zsh
+/home/student/Robotics-Automation-QSTP-2021/install/local_setup.zsh
+/home/student/Robotics-Automation-QSTP-2021/install/.rosinstall
+/home/student/Robotics-Automation-QSTP-2021/install/lib/pkgconfig/hello_w.pc
+/home/student/Robotics-Automation-QSTP-2021/install/share/hello_w/cmake/hello_wConfig.cmake
+/home/student/Robotics-Automation-QSTP-2021/install/share/hello_w/cmake/hello_wConfig-version.cmake
+/home/student/Robotics-Automation-QSTP-2021/install/share/hello_w/package.xml

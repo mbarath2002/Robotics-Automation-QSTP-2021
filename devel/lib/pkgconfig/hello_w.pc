@@ -1,0 +1,8 @@
+prefix=/home/student/Robotics-Automation-QSTP-2021/devel
+
+Name: hello_w
+Description: Description of hello_w
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

@@ -7,7 +7,7 @@ rate=rospy.Rate(2)
 
 c="World!"
 
-while not rospy.is_shutdown()
+while not rospy.is_shutdown():
   pub.publish(c)
   rate.sleep()
   

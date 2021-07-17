@@ -5,9 +5,9 @@ rospy.init_node('sender')
 pub=rospy.Publisher('hello',String)
 rate=rospy.Rate(2)
 
-c="Hello"
+c="Hello,"
 
-while not rospy.is_shutdown()
+while not rospy.is_shutdown():
   pub.publish(c)
   rate.sleep()
   
