@@ -5,13 +5,13 @@ import rospy
 from std_msgs.msg import int32
 from hello_w.srv import server,serverResponse
 def callback(msg):
-  omega=0.1/(msg.data)
+  w=0.1/(msg.data)
 
 def ang_vel(request):
   return serverResponse(omega)
 
 sub=rospy.Subscriber('radius',int32,callback)
 
-service=rospy.Service('compute_ang_vel',server,omega)
+service=rospy.Service('compute_ang_vel',omega,callback)
 
 rospy.spin()
