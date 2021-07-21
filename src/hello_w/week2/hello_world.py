@@ -11,7 +11,6 @@ def callback2(msg):
 if __name__=='__main__':
   sub1=rospy.Subscriber('hello',String,callback1)
   sub2=rospy.Subscriber('world',String,callback2)
-  a1.append(a2)
-  print(a1)
+  print(sub1.a1)
   rospy.spin()
   
