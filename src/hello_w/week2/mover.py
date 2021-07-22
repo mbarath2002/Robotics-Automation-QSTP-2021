@@ -4,9 +4,10 @@ import rospy
 from std_msgs.msg import Float32
 from hello_w.srv import omega
 
+rospy.init_node('mover')
 pub=rospy.Publisher('cmd_vel',Float32)
 rate=rospy.Rate(2)
-rospy.init_node('mover')
+
 
 def callback(msg):
   rospy.wait_for_service('compute_ang_vel')
