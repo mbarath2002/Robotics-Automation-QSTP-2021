@@ -16,7 +16,7 @@ def callback(msg):
   while not rospy.is_node_shutdown:
     pub.publish(w)
 
-sub=rospy.Subscriber('radius',Int32,callback)
+sub=rospy.Subscriber('radius',Float32,callback)
 
 
 
