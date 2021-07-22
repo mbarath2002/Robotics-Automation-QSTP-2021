@@ -4,15 +4,12 @@ from std_msgs.msg import String
 rospy.init_node('hello_world')
 
 def callback1(msg):
-  a1=msg.data
-  return a1
+  print(msg.data)
 def callback2(msg):
-  a2=msg.data
-  return a2
+  print(msg.data)
   
 if __name__=='__main__':
   sub1=rospy.Subscriber('hello',String,callback1)
   sub2=rospy.Subscriber('world',String,callback2)
-  print(sub1.callback1)
   rospy.spin()
   
