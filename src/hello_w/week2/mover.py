@@ -5,7 +5,7 @@ from std_msgs.msg import Float32
 from hello_w.srv import omega
 
 pub=rospy.Publisher('cmd_vel',Float32)
-
+rate=rospy.Rate(2)
 rospy.init_node('mover')
 
 def callback(msg):
@@ -14,8 +14,8 @@ def callback(msg):
   r=msg.data
   w=ang_vel_calculator(r)
   while not rospy.is_node_shutdown:
-    print(r)
     pub.publish(w)
+    rate.sleep()
 
 sub=rospy.Subscriber('radius',Float32,callback)
 
