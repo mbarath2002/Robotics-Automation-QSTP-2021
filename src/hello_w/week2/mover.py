@@ -14,6 +14,7 @@ def callback(msg):
   r=msg.data
   w=ang_vel_calculator(r)
   while not rospy.is_node_shutdown:
+    print(r)
     pub.publish(w)
 
 sub=rospy.Subscriber('radius',Float32,callback)
