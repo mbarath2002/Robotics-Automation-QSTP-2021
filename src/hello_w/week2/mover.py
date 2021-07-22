@@ -4,7 +4,7 @@ import rospy
 from std_msgs.msg import Float32
 from hello_w.srv import omega
 
-pub=rospy.Publisher('cmd_vel',float32)
+pub=rospy.Publisher('cmd_vel',Float32)
 
 rospy.init_node('mover')
 
@@ -16,7 +16,7 @@ def callback(msg):
   while not rospy.is_node_shutdown:
     pub.publish(w)
 
-sub=rospy.Subscriber('radius',int32,callback)
+sub=rospy.Subscriber('radius',Int32,callback)
 
 
 

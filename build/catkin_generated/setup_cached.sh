@@ -7,7 +7,5 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/student/Robotics-Automation-QSTP-2021/devel:$CMAKE_PREFIX_PATH"
 export PWD="/home/student/Robotics-Automation-QSTP-2021/build"
-export ROSLISP_PACKAGE_DIRECTORIES="/home/student/Robotics-Automation-QSTP-2021/devel/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
-export ROS_PACKAGE_PATH="/home/student/Robotics-Automation-QSTP-2021/src:$ROS_PACKAGE_PATH"
+export PYTHONPATH="/home/student/Robotics-Automation-QSTP-2021/devel/lib/python2.7/dist-packages:$PYTHONPATH"

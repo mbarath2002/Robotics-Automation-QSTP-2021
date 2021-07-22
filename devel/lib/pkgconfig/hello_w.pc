@@ -3,6 +3,6 @@ prefix=/home/student/Robotics-Automation-QSTP-2021/devel
 Name: hello_w
 Description: Description of hello_w
 Version: 0.0.0
-Cflags: 
+Cflags: -I/home/student/Robotics-Automation-QSTP-2021/devel/include
 Libs: -L${prefix}/lib 
-Requires: 
+Requires: message_runtime
