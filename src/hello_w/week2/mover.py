@@ -9,8 +9,8 @@ pub=rospy.Publisher('cmd_vel',float32)
 rospy.init_node('mover')
 
 def callback(msg):
-  rospy.wait_for_service('server')
-  ang_vel_calculator=rospy.ServiceProxy('server',omega)
+  rospy.wait_for_service('compute_ang_vel')
+  ang_vel_calculator=rospy.ServiceProxy('compute_ang_vel',omega)
   r=msg.data
   w=ang_vel_calculator(r)
   while not rospy.is_node_shutdown:
