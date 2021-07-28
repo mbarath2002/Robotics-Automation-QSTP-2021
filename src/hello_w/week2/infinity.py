@@ -6,7 +6,7 @@ from tf.transformations import euler_from_quaternion as th
 
 rospy.init_node('infinity')
 
-pub=rospy.Publisher('turtle1/cmd_vel',Twist,queue_size=1)
+pub=rospy.Publisher('cmd_vel',Twist,queue_size=1)
 
 x=0.0
 y=0.0
