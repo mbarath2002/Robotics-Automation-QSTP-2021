@@ -1,8 +1,7 @@
 #!/usr/bin/env python
 import rospy
-from std_msgs import float32
 from state.srv import stateResponse, state
-import numpy
+import math
 
 def state_calc(request):
   dt=0.5
@@ -14,8 +13,8 @@ def state_calc(request):
   y_points=(request.y)
   for i in range(1,n+1):
     t=i*dt#dx=vcos(wt+self.theta)dt
-    x=(v1/w1)*(np.sin(w1*t+theta1))-(v1/w1)*(np.sin(theta1))
-    y=(v1/w1)*(np.cos(theta1))-(v1/w1)*(np.cos(w1*t1+theta1))
+    x=(v1/w1)*(math.sin(w1*t+theta1))-(v1/w1)*(math.sin(theta1))
+    y=(v1/w1)*(math.cos(theta1))-(v1/w1)*(math.cos(w1*t1+theta1))
     x_points.append(x)
     y_points.append(y)
   theta1=theta1+w1*dt*n
