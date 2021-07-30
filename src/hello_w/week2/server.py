@@ -14,7 +14,7 @@ def state_calc(request):
   for i in range(1,n+1):
     t=i*dt#dx=vcos(wt+self.theta)dt
     x=(v1/w1)*(math.sin(w1*t+theta1))-(v1/w1)*(math.sin(theta1))
-    y=(v1/w1)*(math.cos(theta1))-(v1/w1)*(math.cos(w1*t1+theta1))
+    y=(v1/w1)*(math.cos(theta1))-(v1/w1)*(math.cos(w1*t+theta1))
     x_points.append(x)
     y_points.append(y)
   theta1=theta1+w1*dt*n
