@@ -1,7 +1,7 @@
 #!/usr/bin/env python2.7
 import rospy
 from geometry_msgs.msg import Twist
-from nav_msgs import Odometry
+from nav_msgs.msg import Odometry
 from tf.transformations import euler_from_quaternion as th
 
 rospy.init_node('infinity')
@@ -42,6 +42,4 @@ sub=rospy.Subscriber('odom',Odometry,odom_sub2)
 while not rospy.is_shutdown():
   pub.publish(move)
   sub=rospy.Subscriber('odom',Odometry,odom_sub)
-  if(x==x1 and y==y1):
-    move.angular.z=-1*move.angular.z
   rate.sleep()

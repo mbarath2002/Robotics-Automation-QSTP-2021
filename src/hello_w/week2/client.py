@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import rospy
-from state.srv import stateRequest, state
+from hello_w.srv import stateRequest, state
 import sys
 
 x=0

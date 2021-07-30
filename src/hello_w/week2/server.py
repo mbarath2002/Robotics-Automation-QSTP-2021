@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 import rospy
-from state.srv import stateResponse, state
+from hello_w.srv import stateResponse, state
 import math
 
 def state_calc(request):

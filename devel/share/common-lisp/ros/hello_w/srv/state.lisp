@@ -7,19 +7,19 @@
 ;//! \htmlinclude state-request.msg.html
 
 (cl:defclass <state-request> (roslisp-msg-protocol:ros-message)
-  ((x1
-    :reader x1
-    :initarg :x1
+  ((x
+    :reader x
+    :initarg :x
     :type cl:float
     :initform 0.0)
-   (y1
-    :reader y1
-    :initarg :y1
+   (y
+    :reader y
+    :initarg :y
     :type cl:float
     :initform 0.0)
-   (theta1
-    :reader theta1
-    :initarg :theta1
+   (theta
+    :reader theta
+    :initarg :theta
     :type cl:float
     :initform 0.0)
    (v
@@ -42,20 +42,20 @@
   (cl:unless (cl:typep m 'state-request)
     (roslisp-msg-protocol:msg-deprecation-warning "using old message class name hello_w-srv:<state-request> is deprecated: use hello_w-srv:state-request instead.")))
 
-(cl:ensure-generic-function 'x1-val :lambda-list '(m))
-(cl:defmethod x1-val ((m <state-request>))
-  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader hello_w-srv:x1-val is deprecated.  Use hello_w-srv:x1 instead.")
-  (x1 m))
+(cl:ensure-generic-function 'x-val :lambda-list '(m))
+(cl:defmethod x-val ((m <state-request>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader hello_w-srv:x-val is deprecated.  Use hello_w-srv:x instead.")
+  (x m))
 
-(cl:ensure-generic-function 'y1-val :lambda-list '(m))
-(cl:defmethod y1-val ((m <state-request>))
-  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader hello_w-srv:y1-val is deprecated.  Use hello_w-srv:y1 instead.")
-  (y1 m))
+(cl:ensure-generic-function 'y-val :lambda-list '(m))
+(cl:defmethod y-val ((m <state-request>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader hello_w-srv:y-val is deprecated.  Use hello_w-srv:y instead.")
+  (y m))
 
-(cl:ensure-generic-function 'theta1-val :lambda-list '(m))
-(cl:defmethod theta1-val ((m <state-request>))
-  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader hello_w-srv:theta1-val is deprecated.  Use hello_w-srv:theta1 instead.")
-  (theta1 m))
+(cl:ensure-generic-function 'theta-val :lambda-list '(m))
+(cl:defmethod theta-val ((m <state-request>))
+  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader hello_w-srv:theta-val is deprecated.  Use hello_w-srv:theta instead.")
+  (theta m))
 
 (cl:ensure-generic-function 'v-val :lambda-list '(m))
 (cl:defmethod v-val ((m <state-request>))
@@ -68,17 +68,17 @@
   (w m))
 (cl:defmethod roslisp-msg-protocol:serialize ((msg <state-request>) ostream)
   "Serializes a message object of type '<state-request>"
-  (cl:let ((bits (roslisp-utils:encode-single-float-bits (cl:slot-value msg 'x1))))
+  (cl:let ((bits (roslisp-utils:encode-single-float-bits (cl:slot-value msg 'x))))
     (cl:write-byte (cl:ldb (cl:byte 8 0) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 8) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 16) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 24) bits) ostream))
-  (cl:let ((bits (roslisp-utils:encode-single-float-bits (cl:slot-value msg 'y1))))
+  (cl:let ((bits (roslisp-utils:encode-single-float-bits (cl:slot-value msg 'y))))
     (cl:write-byte (cl:ldb (cl:byte 8 0) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 8) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 16) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 24) bits) ostream))
-  (cl:let ((bits (roslisp-utils:encode-single-float-bits (cl:slot-value msg 'theta1))))
+  (cl:let ((bits (roslisp-utils:encode-single-float-bits (cl:slot-value msg 'theta))))
     (cl:write-byte (cl:ldb (cl:byte 8 0) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 8) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 16) bits) ostream)
@@ -101,19 +101,19 @@
       (cl:setf (cl:ldb (cl:byte 8 8) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 16) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 24) bits) (cl:read-byte istream))
-    (cl:setf (cl:slot-value msg 'x1) (roslisp-utils:decode-single-float-bits bits)))
+    (cl:setf (cl:slot-value msg 'x) (roslisp-utils:decode-single-float-bits bits)))
     (cl:let ((bits 0))
       (cl:setf (cl:ldb (cl:byte 8 0) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 8) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 16) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 24) bits) (cl:read-byte istream))
-    (cl:setf (cl:slot-value msg 'y1) (roslisp-utils:decode-single-float-bits bits)))
+    (cl:setf (cl:slot-value msg 'y) (roslisp-utils:decode-single-float-bits bits)))
     (cl:let ((bits 0))
       (cl:setf (cl:ldb (cl:byte 8 0) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 8) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 16) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 24) bits) (cl:read-byte istream))
-    (cl:setf (cl:slot-value msg 'theta1) (roslisp-utils:decode-single-float-bits bits)))
+    (cl:setf (cl:slot-value msg 'theta) (roslisp-utils:decode-single-float-bits bits)))
     (cl:let ((bits 0))
       (cl:setf (cl:ldb (cl:byte 8 0) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 8) bits) (cl:read-byte istream))
@@ -136,16 +136,16 @@
   "hello_w/stateRequest")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql '<state-request>)))
   "Returns md5sum for a message object of type '<state-request>"
-  "a371dbc8e48639d98b2f53f083975699")
+  "5ac9a471a8e70b776d2c59e836a311ff")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql 'state-request)))
   "Returns md5sum for a message object of type 'state-request"
-  "a371dbc8e48639d98b2f53f083975699")
+  "5ac9a471a8e70b776d2c59e836a311ff")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<state-request>)))
   "Returns full string definition for message of type '<state-request>"
-  (cl:format cl:nil "float32 x1~%float32 y1~%float32 theta1~%float32 v~%float32 w~%~%~%"))
+  (cl:format cl:nil "float32 x~%float32 y~%float32 theta~%float32 v~%float32 w~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'state-request)))
   "Returns full string definition for message of type 'state-request"
-  (cl:format cl:nil "float32 x1~%float32 y1~%float32 theta1~%float32 v~%float32 w~%~%~%"))
+  (cl:format cl:nil "float32 x~%float32 y~%float32 theta~%float32 v~%float32 w~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <state-request>))
   (cl:+ 0
      4
@@ -157,9 +157,9 @@
 (cl:defmethod roslisp-msg-protocol:ros-message-to-list ((msg <state-request>))
   "Converts a ROS message object to a list"
   (cl:list 'state-request
-    (cl:cons ':x1 (x1 msg))
-    (cl:cons ':y1 (y1 msg))
-    (cl:cons ':theta1 (theta1 msg))
+    (cl:cons ':x (x msg))
+    (cl:cons ':y (y msg))
+    (cl:cons ':theta (theta msg))
     (cl:cons ':v (v msg))
     (cl:cons ':w (w msg))
 ))
@@ -169,18 +169,13 @@
   ((x2
     :reader x2
     :initarg :x2
-    :type cl:float
-    :initform 0.0)
+    :type (cl:vector cl:float)
+   :initform (cl:make-array 0 :element-type 'cl:float :initial-element 0.0))
    (y2
     :reader y2
     :initarg :y2
-    :type cl:float
-    :initform 0.0)
-   (theta2
-    :reader theta2
-    :initarg :theta2
-    :type cl:float
-    :initform 0.0))
+    :type (cl:vector cl:float)
+   :initform (cl:make-array 0 :element-type 'cl:float :initial-element 0.0)))
 )
 
 (cl:defclass state-response (<state-response>)
@@ -200,49 +195,61 @@
 (cl:defmethod y2-val ((m <state-response>))
   (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader hello_w-srv:y2-val is deprecated.  Use hello_w-srv:y2 instead.")
   (y2 m))
-
-(cl:ensure-generic-function 'theta2-val :lambda-list '(m))
-(cl:defmethod theta2-val ((m <state-response>))
-  (roslisp-msg-protocol:msg-deprecation-warning "Using old-style slot reader hello_w-srv:theta2-val is deprecated.  Use hello_w-srv:theta2 instead.")
-  (theta2 m))
 (cl:defmethod roslisp-msg-protocol:serialize ((msg <state-response>) ostream)
   "Serializes a message object of type '<state-response>"
-  (cl:let ((bits (roslisp-utils:encode-single-float-bits (cl:slot-value msg 'x2))))
+  (cl:let ((__ros_arr_len (cl:length (cl:slot-value msg 'x2))))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) __ros_arr_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) __ros_arr_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) __ros_arr_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) __ros_arr_len) ostream))
+  (cl:map cl:nil #'(cl:lambda (ele) (cl:let ((bits (roslisp-utils:encode-single-float-bits ele)))
     (cl:write-byte (cl:ldb (cl:byte 8 0) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 8) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 16) bits) ostream)
-    (cl:write-byte (cl:ldb (cl:byte 8 24) bits) ostream))
-  (cl:let ((bits (roslisp-utils:encode-single-float-bits (cl:slot-value msg 'y2))))
+    (cl:write-byte (cl:ldb (cl:byte 8 24) bits) ostream)))
+   (cl:slot-value msg 'x2))
+  (cl:let ((__ros_arr_len (cl:length (cl:slot-value msg 'y2))))
+    (cl:write-byte (cl:ldb (cl:byte 8 0) __ros_arr_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 8) __ros_arr_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 16) __ros_arr_len) ostream)
+    (cl:write-byte (cl:ldb (cl:byte 8 24) __ros_arr_len) ostream))
+  (cl:map cl:nil #'(cl:lambda (ele) (cl:let ((bits (roslisp-utils:encode-single-float-bits ele)))
     (cl:write-byte (cl:ldb (cl:byte 8 0) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 8) bits) ostream)
     (cl:write-byte (cl:ldb (cl:byte 8 16) bits) ostream)
-    (cl:write-byte (cl:ldb (cl:byte 8 24) bits) ostream))
-  (cl:let ((bits (roslisp-utils:encode-single-float-bits (cl:slot-value msg 'theta2))))
-    (cl:write-byte (cl:ldb (cl:byte 8 0) bits) ostream)
-    (cl:write-byte (cl:ldb (cl:byte 8 8) bits) ostream)
-    (cl:write-byte (cl:ldb (cl:byte 8 16) bits) ostream)
-    (cl:write-byte (cl:ldb (cl:byte 8 24) bits) ostream))
+    (cl:write-byte (cl:ldb (cl:byte 8 24) bits) ostream)))
+   (cl:slot-value msg 'y2))
 )
 (cl:defmethod roslisp-msg-protocol:deserialize ((msg <state-response>) istream)
   "Deserializes a message object of type '<state-response>"
+  (cl:let ((__ros_arr_len 0))
+    (cl:setf (cl:ldb (cl:byte 8 0) __ros_arr_len) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 8) __ros_arr_len) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 16) __ros_arr_len) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 24) __ros_arr_len) (cl:read-byte istream))
+  (cl:setf (cl:slot-value msg 'x2) (cl:make-array __ros_arr_len))
+  (cl:let ((vals (cl:slot-value msg 'x2)))
+    (cl:dotimes (i __ros_arr_len)
     (cl:let ((bits 0))
       (cl:setf (cl:ldb (cl:byte 8 0) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 8) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 16) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 24) bits) (cl:read-byte istream))
-    (cl:setf (cl:slot-value msg 'x2) (roslisp-utils:decode-single-float-bits bits)))
+    (cl:setf (cl:aref vals i) (roslisp-utils:decode-single-float-bits bits))))))
+  (cl:let ((__ros_arr_len 0))
+    (cl:setf (cl:ldb (cl:byte 8 0) __ros_arr_len) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 8) __ros_arr_len) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 16) __ros_arr_len) (cl:read-byte istream))
+    (cl:setf (cl:ldb (cl:byte 8 24) __ros_arr_len) (cl:read-byte istream))
+  (cl:setf (cl:slot-value msg 'y2) (cl:make-array __ros_arr_len))
+  (cl:let ((vals (cl:slot-value msg 'y2)))
+    (cl:dotimes (i __ros_arr_len)
     (cl:let ((bits 0))
       (cl:setf (cl:ldb (cl:byte 8 0) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 8) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 16) bits) (cl:read-byte istream))
       (cl:setf (cl:ldb (cl:byte 8 24) bits) (cl:read-byte istream))
-    (cl:setf (cl:slot-value msg 'y2) (roslisp-utils:decode-single-float-bits bits)))
-    (cl:let ((bits 0))
-      (cl:setf (cl:ldb (cl:byte 8 0) bits) (cl:read-byte istream))
-      (cl:setf (cl:ldb (cl:byte 8 8) bits) (cl:read-byte istream))
-      (cl:setf (cl:ldb (cl:byte 8 16) bits) (cl:read-byte istream))
-      (cl:setf (cl:ldb (cl:byte 8 24) bits) (cl:read-byte istream))
-    (cl:setf (cl:slot-value msg 'theta2) (roslisp-utils:decode-single-float-bits bits)))
+    (cl:setf (cl:aref vals i) (roslisp-utils:decode-single-float-bits bits))))))
   msg
 )
 (cl:defmethod roslisp-msg-protocol:ros-datatype ((msg (cl:eql '<state-response>)))
@@ -253,28 +260,26 @@
   "hello_w/stateResponse")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql '<state-response>)))
   "Returns md5sum for a message object of type '<state-response>"
-  "a371dbc8e48639d98b2f53f083975699")
+  "5ac9a471a8e70b776d2c59e836a311ff")
 (cl:defmethod roslisp-msg-protocol:md5sum ((type (cl:eql 'state-response)))
   "Returns md5sum for a message object of type 'state-response"
-  "a371dbc8e48639d98b2f53f083975699")
+  "5ac9a471a8e70b776d2c59e836a311ff")
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql '<state-response>)))
   "Returns full string definition for message of type '<state-response>"
-  (cl:format cl:nil "float32 x2~%float32 y2~%float32 theta2~%~%~%~%"))
+  (cl:format cl:nil "float32[] x2~%float32[] y2~%~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:message-definition ((type (cl:eql 'state-response)))
   "Returns full string definition for message of type 'state-response"
-  (cl:format cl:nil "float32 x2~%float32 y2~%float32 theta2~%~%~%~%"))
+  (cl:format cl:nil "float32[] x2~%float32[] y2~%~%~%~%"))
 (cl:defmethod roslisp-msg-protocol:serialization-length ((msg <state-response>))
   (cl:+ 0
-     4
-     4
-     4
+     4 (cl:reduce #'cl:+ (cl:slot-value msg 'x2) :key #'(cl:lambda (ele) (cl:declare (cl:ignorable ele)) (cl:+ 4)))
+     4 (cl:reduce #'cl:+ (cl:slot-value msg 'y2) :key #'(cl:lambda (ele) (cl:declare (cl:ignorable ele)) (cl:+ 4)))
 ))
 (cl:defmethod roslisp-msg-protocol:ros-message-to-list ((msg <state-response>))
   "Converts a ROS message object to a list"
   (cl:list 'state-response
     (cl:cons ':x2 (x2 msg))
     (cl:cons ':y2 (y2 msg))
-    (cl:cons ':theta2 (theta2 msg))
 ))
 (cl:defmethod roslisp-msg-protocol:service-request-type ((msg (cl:eql 'state)))
   'state-request)

@@ -24,27 +24,22 @@ struct stateResponse_
   typedef stateResponse_<ContainerAllocator> Type;
 
   stateResponse_()
-    : x2(0.0)
-    , y2(0.0)
-    , theta2(0.0)  {
+    : x2()
+    , y2()  {
     }
   stateResponse_(const ContainerAllocator& _alloc)
-    : x2(0.0)
-    , y2(0.0)
-    , theta2(0.0)  {
+    : x2(_alloc)
+    , y2(_alloc)  {
   (void)_alloc;
     }
 
 
 
-   typedef float _x2_type;
+   typedef std::vector<float, typename ContainerAllocator::template rebind<float>::other >  _x2_type;
   _x2_type x2;
 
-   typedef float _y2_type;
+   typedef std::vector<float, typename ContainerAllocator::template rebind<float>::other >  _y2_type;
   _y2_type y2;
-
-   typedef float _theta2_type;
-  _theta2_type theta2;
 
 
 
@@ -80,7 +75,7 @@ namespace message_traits
 
 
 
-// BOOLTRAITS {'IsFixedSize': True, 'IsMessage': True, 'HasHeader': False}
+// BOOLTRAITS {'IsFixedSize': False, 'IsMessage': True, 'HasHeader': False}
 // {'std_msgs': ['/opt/ros/melodic/share/std_msgs/cmake/../msg']}
 
 // !!!!!!!!!!! ['__class__', '__delattr__', '__dict__', '__doc__', '__eq__', '__format__', '__getattribute__', '__hash__', '__init__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', '_parsed_fields', 'constants', 'fields', 'full_name', 'has_header', 'header_present', 'names', 'package', 'parsed_fields', 'short_name', 'text', 'types']
@@ -90,12 +85,12 @@ namespace message_traits
 
 template <class ContainerAllocator>
 struct IsFixedSize< ::hello_w::stateResponse_<ContainerAllocator> >
-  : TrueType
+  : FalseType
   { };
 
 template <class ContainerAllocator>
 struct IsFixedSize< ::hello_w::stateResponse_<ContainerAllocator> const>
-  : TrueType
+  : FalseType
   { };
 
 template <class ContainerAllocator>
@@ -124,12 +119,12 @@ struct MD5Sum< ::hello_w::stateResponse_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "e58093fe33bad51439dbe67607a65aa6";
+    return "dc73d22bb0adec9013b72c5dc47be025";
   }
 
   static const char* value(const ::hello_w::stateResponse_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0xe58093fe33bad514ULL;
-  static const uint64_t static_value2 = 0x39dbe67607a65aa6ULL;
+  static const uint64_t static_value1 = 0xdc73d22bb0adec90ULL;
+  static const uint64_t static_value2 = 0x13b72c5dc47be025ULL;
 };
 
 template<class ContainerAllocator>
@@ -148,9 +143,8 @@ struct Definition< ::hello_w::stateResponse_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "float32 x2\n"
-"float32 y2\n"
-"float32 theta2\n"
+    return "float32[] x2\n"
+"float32[] y2\n"
 "\n"
 ;
   }
@@ -172,7 +166,6 @@ namespace serialization
     {
       stream.next(m.x2);
       stream.next(m.y2);
-      stream.next(m.theta2);
     }
 
     ROS_DECLARE_ALLINONE_SERIALIZER
@@ -191,12 +184,18 @@ struct Printer< ::hello_w::stateResponse_<ContainerAllocator> >
 {
   template<typename Stream> static void stream(Stream& s, const std::string& indent, const ::hello_w::stateResponse_<ContainerAllocator>& v)
   {
-    s << indent << "x2: ";
-    Printer<float>::stream(s, indent + "  ", v.x2);
-    s << indent << "y2: ";
-    Printer<float>::stream(s, indent + "  ", v.y2);
-    s << indent << "theta2: ";
-    Printer<float>::stream(s, indent + "  ", v.theta2);
+    s << indent << "x2[]" << std::endl;
+    for (size_t i = 0; i < v.x2.size(); ++i)
+    {
+      s << indent << "  x2[" << i << "]: ";
+      Printer<float>::stream(s, indent + "  ", v.x2[i]);
+    }
+    s << indent << "y2[]" << std::endl;
+    for (size_t i = 0; i < v.y2.size(); ++i)
+    {
+      s << indent << "  y2[" << i << "]: ";
+      Printer<float>::stream(s, indent + "  ", v.y2[i]);
+    }
   }
 };
 

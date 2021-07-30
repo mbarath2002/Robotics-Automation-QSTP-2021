@@ -24,16 +24,16 @@ struct stateRequest_
   typedef stateRequest_<ContainerAllocator> Type;
 
   stateRequest_()
-    : x1(0.0)
-    , y1(0.0)
-    , theta1(0.0)
+    : x(0.0)
+    , y(0.0)
+    , theta(0.0)
     , v(0.0)
     , w(0.0)  {
     }
   stateRequest_(const ContainerAllocator& _alloc)
-    : x1(0.0)
-    , y1(0.0)
-    , theta1(0.0)
+    : x(0.0)
+    , y(0.0)
+    , theta(0.0)
     , v(0.0)
     , w(0.0)  {
   (void)_alloc;
@@ -41,14 +41,14 @@ struct stateRequest_
 
 
 
-   typedef float _x1_type;
-  _x1_type x1;
+   typedef float _x_type;
+  _x_type x;
 
-   typedef float _y1_type;
-  _y1_type y1;
+   typedef float _y_type;
+  _y_type y;
 
-   typedef float _theta1_type;
-  _theta1_type theta1;
+   typedef float _theta_type;
+  _theta_type theta;
 
    typedef float _v_type;
   _v_type v;
@@ -134,12 +134,12 @@ struct MD5Sum< ::hello_w::stateRequest_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "434c0a8840b4881875b39b66b5e00e36";
+    return "48f455a89ab93be67e87c19e07e9aa3d";
   }
 
   static const char* value(const ::hello_w::stateRequest_<ContainerAllocator>&) { return value(); }
-  static const uint64_t static_value1 = 0x434c0a8840b48818ULL;
-  static const uint64_t static_value2 = 0x75b39b66b5e00e36ULL;
+  static const uint64_t static_value1 = 0x48f455a89ab93be6ULL;
+  static const uint64_t static_value2 = 0x7e87c19e07e9aa3dULL;
 };
 
 template<class ContainerAllocator>
@@ -158,9 +158,9 @@ struct Definition< ::hello_w::stateRequest_<ContainerAllocator> >
 {
   static const char* value()
   {
-    return "float32 x1\n"
-"float32 y1\n"
-"float32 theta1\n"
+    return "float32 x\n"
+"float32 y\n"
+"float32 theta\n"
 "float32 v\n"
 "float32 w\n"
 ;
@@ -181,9 +181,9 @@ namespace serialization
   {
     template<typename Stream, typename T> inline static void allInOne(Stream& stream, T m)
     {
-      stream.next(m.x1);
-      stream.next(m.y1);
-      stream.next(m.theta1);
+      stream.next(m.x);
+      stream.next(m.y);
+      stream.next(m.theta);
       stream.next(m.v);
       stream.next(m.w);
     }
@@ -204,12 +204,12 @@ struct Printer< ::hello_w::stateRequest_<ContainerAllocator> >
 {
   template<typename Stream> static void stream(Stream& s, const std::string& indent, const ::hello_w::stateRequest_<ContainerAllocator>& v)
   {
-    s << indent << "x1: ";
-    Printer<float>::stream(s, indent + "  ", v.x1);
-    s << indent << "y1: ";
-    Printer<float>::stream(s, indent + "  ", v.y1);
-    s << indent << "theta1: ";
-    Printer<float>::stream(s, indent + "  ", v.theta1);
+    s << indent << "x: ";
+    Printer<float>::stream(s, indent + "  ", v.x);
+    s << indent << "y: ";
+    Printer<float>::stream(s, indent + "  ", v.y);
+    s << indent << "theta: ";
+    Printer<float>::stream(s, indent + "  ", v.theta);
     s << indent << "v: ";
     Printer<float>::stream(s, indent + "  ", v.v);
     s << indent << "w: ";

@@ -7,16 +7,16 @@ import struct
 
 
 class stateRequest(genpy.Message):
-  _md5sum = "434c0a8840b4881875b39b66b5e00e36"
+  _md5sum = "48f455a89ab93be67e87c19e07e9aa3d"
   _type = "hello_w/stateRequest"
   _has_header = False #flag to mark the presence of a Header object
-  _full_text = """float32 x1
-float32 y1
-float32 theta1
+  _full_text = """float32 x
+float32 y
+float32 theta
 float32 v
 float32 w
 """
-  __slots__ = ['x1','y1','theta1','v','w']
+  __slots__ = ['x','y','theta','v','w']
   _slot_types = ['float32','float32','float32','float32','float32']
 
   def __init__(self, *args, **kwds):
@@ -27,7 +27,7 @@ float32 w
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       x1,y1,theta1,v,w
+       x,y,theta,v,w
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -36,20 +36,20 @@ float32 w
     if args or kwds:
       super(stateRequest, self).__init__(*args, **kwds)
       #message fields cannot be None, assign default values for those that are
-      if self.x1 is None:
-        self.x1 = 0.
-      if self.y1 is None:
-        self.y1 = 0.
-      if self.theta1 is None:
-        self.theta1 = 0.
+      if self.x is None:
+        self.x = 0.
+      if self.y is None:
+        self.y = 0.
+      if self.theta is None:
+        self.theta = 0.
       if self.v is None:
         self.v = 0.
       if self.w is None:
         self.w = 0.
     else:
-      self.x1 = 0.
-      self.y1 = 0.
-      self.theta1 = 0.
+      self.x = 0.
+      self.y = 0.
+      self.theta = 0.
       self.v = 0.
       self.w = 0.
 
@@ -66,7 +66,7 @@ float32 w
     """
     try:
       _x = self
-      buff.write(_get_struct_5f().pack(_x.x1, _x.y1, _x.theta1, _x.v, _x.w))
+      buff.write(_get_struct_5f().pack(_x.x, _x.y, _x.theta, _x.v, _x.w))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -80,7 +80,7 @@ float32 w
       _x = self
       start = end
       end += 20
-      (_x.x1, _x.y1, _x.theta1, _x.v, _x.w,) = _get_struct_5f().unpack(str[start:end])
+      (_x.x, _x.y, _x.theta, _x.v, _x.w,) = _get_struct_5f().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -94,7 +94,7 @@ float32 w
     """
     try:
       _x = self
-      buff.write(_get_struct_5f().pack(_x.x1, _x.y1, _x.theta1, _x.v, _x.w))
+      buff.write(_get_struct_5f().pack(_x.x, _x.y, _x.theta, _x.v, _x.w))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -109,7 +109,7 @@ float32 w
       _x = self
       start = end
       end += 20
-      (_x.x1, _x.y1, _x.theta1, _x.v, _x.w,) = _get_struct_5f().unpack(str[start:end])
+      (_x.x, _x.y, _x.theta, _x.v, _x.w,) = _get_struct_5f().unpack(str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -133,16 +133,15 @@ import struct
 
 
 class stateResponse(genpy.Message):
-  _md5sum = "e58093fe33bad51439dbe67607a65aa6"
+  _md5sum = "dc73d22bb0adec9013b72c5dc47be025"
   _type = "hello_w/stateResponse"
   _has_header = False #flag to mark the presence of a Header object
-  _full_text = """float32 x2
-float32 y2
-float32 theta2
+  _full_text = """float32[] x2
+float32[] y2
 
 """
-  __slots__ = ['x2','y2','theta2']
-  _slot_types = ['float32','float32','float32']
+  __slots__ = ['x2','y2']
+  _slot_types = ['float32[]','float32[]']
 
   def __init__(self, *args, **kwds):
     """
@@ -152,7 +151,7 @@ float32 theta2
     changes.  You cannot mix in-order arguments and keyword arguments.
 
     The available fields are:
-       x2,y2,theta2
+       x2,y2
 
     :param args: complete set of field values, in .msg order
     :param kwds: use keyword arguments corresponding to message field names
@@ -162,15 +161,12 @@ float32 theta2
       super(stateResponse, self).__init__(*args, **kwds)
       #message fields cannot be None, assign default values for those that are
       if self.x2 is None:
-        self.x2 = 0.
+        self.x2 = []
       if self.y2 is None:
-        self.y2 = 0.
-      if self.theta2 is None:
-        self.theta2 = 0.
+        self.y2 = []
     else:
-      self.x2 = 0.
-      self.y2 = 0.
-      self.theta2 = 0.
+      self.x2 = []
+      self.y2 = []
 
   def _get_types(self):
     """
@@ -184,8 +180,14 @@ float32 theta2
     :param buff: buffer, ``StringIO``
     """
     try:
-      _x = self
-      buff.write(_get_struct_3f().pack(_x.x2, _x.y2, _x.theta2))
+      length = len(self.x2)
+      buff.write(_struct_I.pack(length))
+      pattern = '<%sf'%length
+      buff.write(struct.pack(pattern, *self.x2))
+      length = len(self.y2)
+      buff.write(_struct_I.pack(length))
+      pattern = '<%sf'%length
+      buff.write(struct.pack(pattern, *self.y2))
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -196,10 +198,20 @@ float32 theta2
     """
     try:
       end = 0
-      _x = self
       start = end
-      end += 12
-      (_x.x2, _x.y2, _x.theta2,) = _get_struct_3f().unpack(str[start:end])
+      end += 4
+      (length,) = _struct_I.unpack(str[start:end])
+      pattern = '<%sf'%length
+      start = end
+      end += struct.calcsize(pattern)
+      self.x2 = struct.unpack(pattern, str[start:end])
+      start = end
+      end += 4
+      (length,) = _struct_I.unpack(str[start:end])
+      pattern = '<%sf'%length
+      start = end
+      end += struct.calcsize(pattern)
+      self.y2 = struct.unpack(pattern, str[start:end])
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -212,8 +224,14 @@ float32 theta2
     :param numpy: numpy python module
     """
     try:
-      _x = self
-      buff.write(_get_struct_3f().pack(_x.x2, _x.y2, _x.theta2))
+      length = len(self.x2)
+      buff.write(_struct_I.pack(length))
+      pattern = '<%sf'%length
+      buff.write(self.x2.tostring())
+      length = len(self.y2)
+      buff.write(_struct_I.pack(length))
+      pattern = '<%sf'%length
+      buff.write(self.y2.tostring())
     except struct.error as se: self._check_types(struct.error("%s: '%s' when writing '%s'" % (type(se), str(se), str(locals().get('_x', self)))))
     except TypeError as te: self._check_types(ValueError("%s: '%s' when writing '%s'" % (type(te), str(te), str(locals().get('_x', self)))))
 
@@ -225,10 +243,20 @@ float32 theta2
     """
     try:
       end = 0
-      _x = self
       start = end
-      end += 12
-      (_x.x2, _x.y2, _x.theta2,) = _get_struct_3f().unpack(str[start:end])
+      end += 4
+      (length,) = _struct_I.unpack(str[start:end])
+      pattern = '<%sf'%length
+      start = end
+      end += struct.calcsize(pattern)
+      self.x2 = numpy.frombuffer(str[start:end], dtype=numpy.float32, count=length)
+      start = end
+      end += 4
+      (length,) = _struct_I.unpack(str[start:end])
+      pattern = '<%sf'%length
+      start = end
+      end += struct.calcsize(pattern)
+      self.y2 = numpy.frombuffer(str[start:end], dtype=numpy.float32, count=length)
       return self
     except struct.error as e:
       raise genpy.DeserializationError(e) #most likely buffer underfill
@@ -237,14 +265,8 @@ _struct_I = genpy.struct_I
 def _get_struct_I():
     global _struct_I
     return _struct_I
-_struct_3f = None
-def _get_struct_3f():
-    global _struct_3f
-    if _struct_3f is None:
-        _struct_3f = struct.Struct("<3f")
-    return _struct_3f
 class state(object):
   _type          = 'hello_w/state'
-  _md5sum = 'a371dbc8e48639d98b2f53f083975699'
+  _md5sum = '5ac9a471a8e70b776d2c59e836a311ff'
   _request_class  = stateRequest
   _response_class = stateResponse
