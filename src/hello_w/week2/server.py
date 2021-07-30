@@ -9,8 +9,8 @@ def state_calc(request):
   theta1=request.theta
   v1=request.v
   w1=request.w
-  x_points=(request.x)
-  y_points=(request.y)
+  x_points=[request.x]
+  y_points=[request.y]
   for i in range(1,n+1):
     t=i*dt#dx=vcos(wt+self.theta)dt
     x=(v1/w1)*(math.sin(w1*t+theta1))-(v1/w1)*(math.sin(theta1))
