@@ -18,7 +18,7 @@ def state_calc(request):
     x_points.append(x)
     y_points.append(y)
   theta1=theta1+w1*dt*n
-  return x_points,y_points
+  return stateResponse(x_points,y_points)
    
 rospy.init_node('server')
 service=rospy.Service('position',state,state_calc)
