@@ -18,7 +18,8 @@ def callback(msg):
   move=Twist()
   move.linear.x=v
   move.angular.z=w
-  while not rospy.is_node_shutdown:
+  while(1):
+    print("check")
     pub.publish(move)
     rate.sleep()
 
