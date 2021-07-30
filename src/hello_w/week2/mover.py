@@ -10,6 +10,7 @@ pub=rospy.Publisher('cmd_vel',Twist,queue_size=1)
 rate=rospy.Rate(2)
 
 def callback(msg):
+  x=0
   rospy.wait_for_service('compute_ang_vel')
   ang_vel_calculator=rospy.ServiceProxy('compute_ang_vel',omega)
   r=msg.data
@@ -18,7 +19,7 @@ def callback(msg):
   move=Twist()
   move.linear.x=v
   move.angular.z=w
-  while(1):
+  while(x==0):
     print("check")
     pub.publish(move)
     rate.sleep()
