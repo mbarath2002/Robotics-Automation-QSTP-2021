@@ -3,7 +3,7 @@
 import rospy
 from std_msgs.msg import Float32
 from hello_w.srv import omega
-from geometry_msgs import Twist
+from geometry_msgs.msg import Twist
 
 rospy.init_node('mover')
 pub=rospy.Publisher('cmd_vel',Twist)
