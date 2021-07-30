@@ -6,10 +6,8 @@ from hello_w.srv import omega
 from geometry_msgs.msg import Twist
 
 rospy.init_node('mover')
-pub=rospy.Publisher('cmd_vel',Twist)
+pub=rospy.Publisher('cmd_vel',Twist,queue_size=1)
 rate=rospy.Rate(2)
-
-
 
 def callback(msg):
   rospy.wait_for_service('compute_ang_vel')
