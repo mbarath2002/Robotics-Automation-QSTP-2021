@@ -13,5 +13,5 @@ rospy.init_node('client')
 rospy.wait_for_service('position')
 
 finder=rospy.ServiceProxy('position',state)
-request=WordCountRequesr(x,y,theta,v,w)
+request=stateRequest(x,y,theta,v,w)
 x2,y2=finder(request)
