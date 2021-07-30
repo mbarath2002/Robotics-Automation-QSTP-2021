@@ -16,7 +16,7 @@ def callback(msg):
   ang_vel_calculator=rospy.ServiceProxy('compute_ang_vel',omega)
   r=msg.data
   w=ang_vel_calculator(r)
-  v=r*w
+  v=0.1
   move=Twist()
   move.linear.x=v
   move.angular.z=w
